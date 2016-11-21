@@ -13,7 +13,8 @@ var contadorIntentos;
 function comenzar()
 {
 	//Genero el número RANDOM entre 1 y 100
-	 
+	numeroSecreto = Math.round(Math.random()*100);
+	contadorIntentos = 10;
 		//alert(numeroSecreto );
 	
 
@@ -21,6 +22,31 @@ function comenzar()
 
 function verificar()
 {
-	
+	contadorIntentos--;
+	var numero = parseInt(document.getElementById('numero').value);
+
+	if(contadorIntentos == 0){
+
+		alert('Usted no tiene mas intentos.');
+
+	}else{
+
+		if(numero == numeroSecreto){
+
+			alert("acertaste");
+
+		}else if(numero > numeroSecreto){
+
+			alert("Te pasaste");
+
+		}else{
+
+			alert("te falta");
+
+		}
+
+		document.getElementById('intentos').value = contadorIntentos;
+
+	}
 	
 }
